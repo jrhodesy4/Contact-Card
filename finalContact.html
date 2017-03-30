@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Advanced</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('button').click(function(){
+          var first = $('#first').val();
+          var last = $('#last').val();
+          var desc = $('#desc').val();
+          var card = ('<div class="card"><h1>'+first+'</h1><br><h1>'+last+'</h1></div>');
+          $('div.right').append(card);
+        });
+        // $('button').click(function(){
+        //   var desc = $('#desc').val();
+        //   $(card).hide('<li><h2>'+desc+'</h2></li>');
+        // });
+
+        $(document).on("click", ".card", function(){
+          var desc = $('#desc').val();
+          $(this).replaceWith('<div class="card"><h2>'+desc+'</h2></div>');
+          // var side2 = ('<li class="side2"><h1>'+desc+'</h1></li>');
+          // $(this).val('side2', card);
+          // $(this).val('card', side2);
+
+        });
+
+      });
+    </script>
+    <style>
+    ul{
+      font-size: 12px;
+    }
+      .right {
+        width: 1300px;
+        height: 1000px;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .left {
+        width: 300px;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 15px;
+      }
+      li {
+        height: 175px;
+        width: 300px;
+        border-style: solid;
+        list-style-type: none;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+      .card{
+        height: 175px;
+        width: 300px;
+        border-style: solid;
+        list-style-type: none;
+        margin-bottom: 10px;
+        padding: 10px;
+        display: inline-block;
+        text-align: center;
+        margin: 10px;
+        vertical-align: top;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left">
+      <h1>Add Contact</h1>
+      <form>
+        <p>First name:<input id="first" type="text" name="firstname"></p>
+        <p>Last name:<input id="last" type="text" name="lastname"></p>
+        <p><textarea id="desc" cols="35" rows="5"></textarea></p>
+        <button type="button">Add User</button>
+      </form>
+    </div>
+    <div class="right">
+
+    </div>
+
+  </body>
+</html>
